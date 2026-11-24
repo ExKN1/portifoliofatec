@@ -1,0 +1,107 @@
+:root {
+    --fundo: #0b1420;
+    --caixa: #132338;
+    --borda: #304963;
+    --texto: #f0f5fb;
+    --suave: #b8c8da;
+    --destaque: #8bcaff;
+    --botao: #1765a6;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 24px; }
+body { background: var(--fundo); color: var(--texto); font: 16px/1.65 Arial, Helvetica, sans-serif; }
+a { color: inherit; }
+a:focus-visible, summary:focus-visible { outline: 3px solid var(--destaque); outline-offset: 5px; }
+header { max-width: 1100px; width: 90%; margin: auto; padding: 28px 0; display: flex; justify-content: space-between; align-items: center; gap: 20px; }
+.logo { font-size: 23px; font-weight: bold; text-decoration: none; }
+.logo span { color: var(--destaque); }
+nav { display: flex; flex-wrap: wrap; gap: 8px; }
+nav a { padding: 8px 12px; text-decoration: none; border-radius: 5px; }
+nav a:hover { background: var(--borda); }
+main { display: flex; flex-direction: column; gap: 42px; max-width: 1100px; width: 90%; margin: 20px auto 0; }
+.box { background: var(--caixa); border: 1px solid var(--borda); border-radius: 10px; padding: 36px; }
+h1, h2, h3 { line-height: 1.25; }
+h1 { font-size: clamp(34px, 4.5vw, 48px); margin: 12px 0 20px; }
+h2 { font-size: 29px; margin-bottom: 18px; }
+h3 { font-size: 20px; margin-bottom: 12px; }
+p { margin-bottom: 16px; }
+p:last-child { margin-bottom: 0; }
+.destaque { display: flex; align-items: center; justify-content: space-between; gap: 48px; padding: 48px 36px; }
+.destaque-texto { max-width: 620px; }
+.destaque-texto > p:not(.subtitulo) { color: var(--suave); }
+.subtitulo { color: var(--destaque); font-weight: bold; font-size: 14px; }
+.foto { width: 240px; aspect-ratio: 1; object-fit: cover; border-radius: 10px; border: 1px solid var(--borda); flex-shrink: 0; }
+.botao { display: inline-block; background: var(--botao); color: white; border-radius: 6px; padding: 10px 18px; text-decoration: none; font-size: 14px; font-weight: bold; text-align: center; }
+.botao:hover { background: #2179bf; }
+.destaque .botao { margin-top: 8px; }
+.titulo-secao { margin-bottom: 10px; }
+.introducao { color: var(--suave); }
+.categoria { margin: 28px 0 16px; font-size: 19px; }
+.cards { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+.card { background: var(--caixa); border: 1px solid var(--borda); border-radius: 10px; overflow: hidden; display: flex; flex-direction: column; min-width: 0; }
+.card-capa { height: 135px; display: grid; place-content: center; text-align: center; background: #213b56; }
+.card-capa strong { font-size: 30px; letter-spacing: 1px; }
+.card-capa span { font-size: 12px; margin-top: 3px; }
+.capa-dm { background: #283f3c; color: #d7ede2; }
+.capa-oswaldo { background: #26374a; color: #e1edf9; }
+.capa-bella { background: #ffffff; color: #f4eaff; }
+.capa-esports { background: #45402a; color: #fff1bf; }
+.capa-flamengo { background: #702534; color: #ffe4e8; }
+.capa-orvessa { background: #152126; color: #e9ce91; }
+.card-conteudo { padding: 22px; display: flex; flex-direction: column; align-items: flex-start; gap: 14px; flex: 1; }
+.card-conteudo h3 { margin: 0; font-size: 21px; }
+.card-conteudo > p { font-size: 14px; color: var(--suave); margin: 0; }
+.card-conteudo .tags { color: var(--destaque); font-size: 12px; }
+.card-conteudo > .botao { margin-top: auto; }
+details { width: 100%; font-size: 14px; }
+summary { cursor: pointer; color: var(--destaque); padding: 8px 0; }
+.detalhes { margin-top: 10px; border-top: 1px solid var(--borda); padding-top: 16px; }
+.detalhes p { color: var(--suave); margin-bottom: 14px; }
+.detalhes strong { color: var(--texto); }
+.detalhes a { color: var(--destaque); overflow-wrap: anywhere; }
+.pendente { color: #d6bd96!important; font-size: 14px; }
+.lista { padding-left: 22px; display: grid; gap: 10px; }
+.formacao-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 28px; }
+.formacao-grid h3 { font-size: 18px; }
+.formacao-grid p { font-size: 14px; color: var(--suave); }
+.redes { display: flex; gap: 12px; flex-wrap: wrap; }
+.redes a { border: 1px solid var(--borda); border-radius: 6px; padding: 9px 16px; text-decoration: none; font-size: 14px; }
+.redes a:hover { background: var(--borda); }
+footer { text-align: center; padding: 35px 20px; color: var(--suave); font-size: 14px; }
+.pular { position: fixed; top: 10px; left: 10px; padding: 12px; background: var(--texto); color: var(--fundo); transform: translateY(-200%); z-index: 2; }
+.pular:focus { transform: none; }
+@media (max-width: 950px) {
+    .cards { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .foto { width: 210px; }
+    .destaque { gap: 25px; }
+    .formacao-grid { grid-template-columns: 1fr; gap: 20px; }
+}
+@media (max-width: 650px) {
+    header { align-items: flex-start; flex-direction: column; gap: 15px; }
+    nav { gap: 0; width: 100%; justify-content: space-between; }
+    nav a { padding: 8px 4px; font-size: 14px; }
+    main { gap: 28px; margin-top: 8px; }
+    .destaque { flex-direction: column-reverse; align-items: flex-start; }
+    .box, .destaque { padding: 26px 22px; }
+    .foto { width: 170px; }
+    h2 { font-size: 25px; }
+}
+@media (max-width: 500px) { .cards { grid-template-columns: 1fr; } }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+.foto { object-position: center 38%; }
+.card-capa:has(.projeto-logo) { display: flex; align-items: center; justify-content: center; padding: 18px; }
+.projeto-logo { display: block; max-width: 100%; max-height: 100%; object-fit: contain; }
+.logo-bella { width: 185px; }
+.logo-orvessa { width: 240px; }
+
+.certificados { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px; }
+.certificado { display: flex; flex-direction: column; align-items: flex-start; border: 1px solid var(--borda); padding: 20px; border-radius: 8px; }
+.certificado h3 { font-size: 18px; }
+.certificado p { font-size: 14px; color: var(--suave); }
+.certificado .botao { margin-top: auto; }
+.data-curso { font-size: 13px; }
+@media (max-width: 950px) { .certificados { grid-template-columns: 1fr; } }
+
+.logo-oswaldo { width: 100px; border-radius: 16px; }
+.redes a { overflow-wrap: anywhere; max-width: 100%; }
